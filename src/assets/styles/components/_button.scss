@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "../variables" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: -8%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $color-white;
+    color: $color-white;
+  }
+}
