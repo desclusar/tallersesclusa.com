@@ -1,65 +1,177 @@
+@use "sass:color";
 @use "../variables" as *;
+@use "../mixins" as *;
 
 .footer {
+  width: 100%;
+  padding-top: 1rem;
   background-color: $color-footer;
-  font-size: 0.8rem;
-  color: #9ca3af;
+  color: color.adjust($color-text, $lightness: 50%);
+  font-weight: 100;
 
-  &__inner {
-    padding: 0 $spacing-md;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  &__top {
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
+  &__container {
+    @include container;
+    padding: 1rem;
 
     @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr 1fr 1.2fr;
+      grid-template-areas: "brand links schedule contact";
+      align-items: start;
+      gap: 3rem;
+    }
+  }
+
+  &__bottom {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-content: space-between;
+    text-align: center;
+    border-top: 1px solid $color-text;
+
+    @media (min-width: 768px) {
+      display: flex;
       flex-direction: row;
-      align-items: flex-start;
       justify-content: space-between;
     }
   }
 
-  &__logo {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-    width: 24px;
-    height: 24px;
-    color: $color-white;
-  }
-
-  &__mid {
+  &__legal {
+    @include container;
     display: flex;
     flex-direction: row;
-    align-items: top;
     justify-content: space-between;
-    padding: 1rem 0;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      align-self: right;
+      gap: 2rem;
+    }
+  }
+
+  &__link {
+    &:hover {
+      @include hover-link;
+      font-weight: 900;
+    }
+  }
+
+  .fa-solid {
+    flex-shrink: 0;
+    width: 1rem;
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    color: $color-primary;
+  }
+}
+
+.brand {
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid $color-text;
+
+  @media (min-width: 768px) {
+    grid-area: brand;
+    text-align: left;
+    border: 0;
+  }
+
+  &__img {
+    width: 64px;
+    height: auto;
   }
 
   &__title {
-    display: flex;
-    align-items: center;
-    color: $color-white;
+    color: $color-text-highlight;
+  }
+}
+
+.contact {
+  padding-top: 1rem;
+  text-align: left;
+  line-height: 1.8rem;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+    grid-area: contact;
   }
 
-  &__bottom {
-    padding: 1rem 0;
-    border-top: 1px solid #374151;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+  &__address {
+    font-style: normal;
   }
 
-  &__legal {
+  &__item {
+    &--icon {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+
+    &--highlight {
+      font-weight: 400;
+    }
+
+    &--email {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: color.adjust($color-primary, $lightness: 40%);
+    }
+  }
+}
+
+.schedule {
+  padding: 1rem 0;
+  text-align: left;
+  line-height: 1.8rem;
+
+  @media (min-width: 768px) {
+    grid-area: schedule;
+    padding-top: 0;
+  }
+
+  &__item {
     display: flex;
-    flex-grow: 1;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__horari {
+    &--tancat {
+      text-transform: uppercase;
+      color: color.adjust($color-accent, $lightness: 25%);
+    }
+  }
+}
+
+.links {
+  text-align: left;
+
+  @media (min-width: 768px) {
+    grid-area: links;
+    justify-self: left;
+  }
+
+  &__list {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+
+  &__text {
+    display: inline-block;
+    @include hover-link;
+
+    &:hover {
+      font-weight: 900;
+    }
   }
 }

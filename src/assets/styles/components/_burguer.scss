@@ -12,6 +12,10 @@
   color: $color-primary;
   transition: opacity 0.3s ease;
 
+  @media (min-width: 768px) {
+    display: none; // ← aquí, dins del component
+  }
+
   &:hover {
     opacity: 0.7;
   }
