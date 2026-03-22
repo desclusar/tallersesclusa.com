@@ -1,13 +1,13 @@
 @use "../variables" as *;
 
 .burger {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 5px;
 
   color: $color-primary;
   transition: opacity 0.3s ease;
@@ -31,17 +31,19 @@
     transition:
       transform 0.3s ease,
       opacity 0.2s ease;
-    transform-origin: center;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
   }
 
   &--is-active {
     .burger__line--top {
       transform: translateY(20px) rotate(45deg);
     }
+
     .burger__line--middle {
       opacity: 0;
-      transform: scaleX(0);
     }
+
     .burger__line--bottom {
       transform: translateY(-20px) rotate(-45deg);
     }
