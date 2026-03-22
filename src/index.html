@@ -376,42 +376,44 @@
 
         <div class="trust-image">
           <div class="trust-image__media">
-            <picture class="trust-image__picture">
-              <source type="image/avif" srcset="
+            <div class="trust-image__picture-wrapper">
+              <picture class="trust-image__picture">
+                <source type="image/avif" srcset="
       ./assets/images/why-us.jpg?as=avif&width=400  400w,
       ./assets/images/why-us.jpg?as=avif&width=600  600w,
       ./assets/images/why-us.jpg?as=avif&width=900  900w
     " sizes="(max-width: 480px) 100vw,
-           (max-width: 1024px) 50vw,
-           400px">
+             (max-width: 1024px) 50vw,
+             400px">
 
-              <source type="image/webp" srcset="
+                <source type="image/webp" srcset="
       ./assets/images/why-us.jpg?as=webp&width=400  400w,
       ./assets/images/why-us.jpg?as=webp&width=600  600w,
       ./assets/images/why-us.jpg?as=webp&width=900  900w
     " sizes="(max-width: 480px) 100vw,
-           (max-width: 1024px) 50vw,
-           400px">
+             (max-width: 1024px) 50vw,
+             400px">
 
-              <img class="trust-image__image" src="./assets/images/why-us.jpg?width=600" srcset="
-      ./assets/images/why-us.jpg?width=400  400w,
-      ./assets/images/why-us.jpg?width=600  600w,
-      ./assets/images/why-us.jpg?width=900  900w
-    " sizes="(max-width: 480px) 100vw,
-           (max-width: 1024px) 50vw,
-           400px"
-                alt="Vehicle gris amb la porta oberta en procés de reparació de carrosseria en un taller especialitzat"
-                loading="lazy">
+                <img class="trust-image__image" src="./assets/images/why-us.jpg?width=600" srcset="
+        ./assets/images/why-us.jpg?width=400  400w,
+        ./assets/images/why-us.jpg?width=600  600w,
+        ./assets/images/why-us.jpg?width=900  900w
+      " sizes="(max-width: 480px) 100vw,
+             (max-width: 1024px) 50vw,
+             400px"
+                  alt="Vehicle gris amb la porta oberta en procés de reparació de carrosseria en un taller especialitzat"
+                  loading="lazy">
+              </picture>
 
               <div class="trust-image__badge trust-image__badge--bottom-right">
                 <span class="trust-image__value">100%</span>
                 <span class="trust-image__label">SATISFACCIÓ</span>
               </div>
 
-            </picture>
+            </div>
           </div>
         </div>
-
+      </div>
     </section>
 
     <section class="cta">
@@ -424,27 +426,25 @@
 
         <div class="cta__btn-container">
 
-          <a class="btn btn--primary">
+          <a class="btn btn--primary" href="#">
             <span class="btn__icon">
               <i class="fa-regular fa-calendar"></i>
             </span>
-            <span class="btn__text" href="#">Demanar Cita Online</span>
+            <span class="btn__text">Demanar Cita Online</span>
           </a>
 
-          <a class="btn btn--white">
+          <a class="btn btn--white" href="tel:+34935391741">
             <span class="btn__icon">
               <i class="fa-solid fa-circle-info"></i>
             </span>
-            <span class="btn__text" href="tel:+34935391741">93 593 17 41</span>
+            <span class="btn__text">93 593 17 41</span>
           </a>
 
         </div>
-
+      </div>
     </section>
-    </div>
-  </main>
 
-  </div>
+  </main>
 
   <include src="./views/footer.html"></include>
   <script type="module" src="./assets/scripts/main.js"></script>

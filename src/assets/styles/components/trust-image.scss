@@ -15,6 +15,12 @@
     height: 100%;
   }
 
+  &__picture-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
   &__picture {
     position: relative;
     display: block;
