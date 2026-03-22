@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="/src/assets/images/favicon-32x32.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
@@ -312,7 +313,8 @@
         <div class="why-us__content">
 
           <h2 class="why-us__title">Per què triar-nos?</h2>
-          <p class="why-us__description">Com a part de la xarxa <a lang="eng" href="#">Bosch Car Service</a>,
+          <p class="why-us__description">Com a part de la xarxa <a lang="eng"
+              href="http://https://www.boschcarservice.com/es/es/" target:new>Bosch Car Service</a>,
             oferim una
             combinació única d'expertesa tècnica i tracte personalitzat.</p>
 
@@ -370,10 +372,11 @@
           </ul>
 
         </div>
-        <div class="why-us__image-wrapper">
-          <picture class="why-us__picture">
 
-            <source type="image/avif" srcset="
+        <div class="trust-image">
+          <div class="trust-image__media">
+            <picture class="trust-image__picture">
+              <source type="image/avif" srcset="
       ./assets/images/why-us.jpg?as=avif&width=400  400w,
       ./assets/images/why-us.jpg?as=avif&width=600  600w,
       ./assets/images/why-us.jpg?as=avif&width=900  900w
@@ -381,7 +384,7 @@
            (max-width: 1024px) 50vw,
            400px">
 
-            <source type="image/webp" srcset="
+              <source type="image/webp" srcset="
       ./assets/images/why-us.jpg?as=webp&width=400  400w,
       ./assets/images/why-us.jpg?as=webp&width=600  600w,
       ./assets/images/why-us.jpg?as=webp&width=900  900w
@@ -389,22 +392,25 @@
            (max-width: 1024px) 50vw,
            400px">
 
-            <img class="why-us__image" src="./assets/images/why-us.jpg?width=600" srcset="
+              <img class="trust-image__image" src="./assets/images/why-us.jpg?width=600" srcset="
       ./assets/images/why-us.jpg?width=400  400w,
       ./assets/images/why-us.jpg?width=600  600w,
       ./assets/images/why-us.jpg?width=900  900w
     " sizes="(max-width: 480px) 100vw,
            (max-width: 1024px) 50vw,
            400px"
-              alt="Vehicle gris amb la porta oberta en procés de reparació de carrosseria en un taller especialitzat"
-              loading="lazy">
-          </picture>
+                alt="Vehicle gris amb la porta oberta en procés de reparació de carrosseria en un taller especialitzat"
+                loading="lazy">
 
-          <div class="trust-badge trust-badge--bottom-right">
-            <span class="trust-badge__value">100%</span>
-            <span class="trust-badge__label">SATISFACCIÓ</span>
+              <div class="trust-image__badge trust-image__badge--bottom-right">
+                <span class="trust-image__value">100%</span>
+                <span class="trust-image__label">SATISFACCIÓ</span>
+              </div>
+
+            </picture>
           </div>
         </div>
+
     </section>
 
     <section class="cta">

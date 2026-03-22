@@ -90,30 +90,25 @@ h2 {
 .why-us__container {
   @include container;
 }
-
-.cta__container {
-  @include container;
-}
-
 .why-us {
   background-color: $color-primary;
   padding: 3rem 0;
   color: $color-white;
 
   &__container {
+    @include container;
     display: flex;
     flex-direction: column;
     text-align: left;
+    gap: 1rem;
 
     @media (min-width: 768px) {
+      display: flex;
       flex-direction: row;
-      gap: 2rem;
+      width: 100%;
     }
   }
 
-  &__content {
-    flex: 1;
-  }
   &__description {
     padding: 1rem 0;
     color: color.adjust($color-text, $lightness: 40%);
@@ -146,23 +141,6 @@ h2 {
   &__item-svg {
     width: 24px;
     height: 24px;
-  }
-
-  &__image-wrapper {
-    position: relative;
-    flex: 1;
-    margin-top: 2rem;
-    overflow: visible;
-  }
-  &__picture {
-    display: block;
-    width: 100%;
-  }
-
-  &__image {
-    width: 100%;
-    object-fit: contain;
-    border-radius: 8px;
   }
 }
 

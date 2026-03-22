@@ -4,6 +4,7 @@
 
 .footer {
   width: 100%;
+  height: Auto;
   padding-top: 1rem;
   background-color: $color-footer;
   color: color.adjust($color-text, $lightness: 50%);
@@ -15,7 +16,7 @@
 
     @media (min-width: 768px) {
       display: grid;
-      grid-template-columns: 1fr 0.5fr 1fr 1.2fr;
+      grid-template-columns: 1fr 125px 1fr 1.2fr;
       grid-template-areas: "brand links schedule contact";
       align-items: start;
       gap: 3rem;
@@ -23,7 +24,6 @@
   }
 
   &__bottom {
-    @include container;
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
@@ -35,6 +35,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      padding: 1rem;
     }
   }
 
@@ -99,6 +100,7 @@
   @media (min-width: 768px) {
     padding-top: 0;
     grid-area: contact;
+    justify-self: right;
   }
 
   &__address {
@@ -135,6 +137,7 @@
   @media (min-width: 768px) {
     grid-area: schedule;
     padding-top: 0;
+    justify-self: right;
   }
 
   &__item {
@@ -142,6 +145,7 @@
     justify-content: space-between;
     margin-left: 1.5rem;
     margin-top: 0.5rem;
+    gap: 2rem;
   }
 
   &__horari {
@@ -157,7 +161,7 @@
 
   @media (min-width: 768px) {
     grid-area: links;
-    justify-self: left;
+    justify-self: right;
   }
 
   &__list {
