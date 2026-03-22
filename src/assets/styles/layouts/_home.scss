@@ -111,7 +111,7 @@ h2 {
 
   &__description {
     padding: 1rem 0;
-    color: color.adjust($color-text, $lightness: 40%);
+    color: color.adjust($color-text, $lightness: 55%);
   }
   &__item {
     display: flex;
@@ -135,7 +135,7 @@ h2 {
   }
 
   &__item-text {
-    color: color.adjust($color-text, $lightness: 40%);
+    color: color.adjust($color-text, $lightness: 55%);
   }
 
   &__item-svg {

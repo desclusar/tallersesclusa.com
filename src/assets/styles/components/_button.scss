@@ -41,7 +41,7 @@
 
   &--white {
     background-color: $color-text-highlight;
-    color: color.adjust($color-text, $lightness: 20%);
+    color: $color-text;
     border: 3px solid color.adjust($color-text, $lightness: 50%);
     transition: all 0.3s ease;
 
