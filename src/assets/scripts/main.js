@@ -10,17 +10,17 @@
  * Write any other JavaScript below
  */
 
-console.log("l'Script s'ha carregat correctament");
 const navToggle = document.querySelector(".burger");
 const header = document.querySelector(".header");
+const navList = document.querySelector(".header__nav-list");
 
-if (header && navToggle) {
+if (header && navToggle && navList) {
 
   navToggle.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("burger--is-active");
-    navToggle.classList.toggle("burger--is-active", isOpen);
+    const isOpen = navToggle.classList.toggle("burger--is-active");
+    header.classList.toggle("header--menu-open", isOpen);
+    navList.classList.toggle("header__nav-list--is-open", isOpen); // ← ara sí
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     navToggle.setAttribute("aria-label", isOpen ? "Tancar menú principal" : "Obrir menú principal");
-
   });
 }

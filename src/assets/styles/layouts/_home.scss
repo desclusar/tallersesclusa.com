@@ -93,7 +93,7 @@ h2 {
 .why-us {
   background-color: $color-primary;
   padding: 3rem 0;
-  color: $color-white;
+  color: $color-text-highlight;
 
   &__container {
     @include container;
@@ -159,7 +159,7 @@ h2 {
     margin: 2rem 0;
     align-items: center;
     border-radius: 16px;
-    background-color: $color-white;
+    background-color: $color-text-highlight;
     box-shadow: -10px 10px 15px -3px rgba(0, 0, 0, 0.1);
     @media (min-width: 768px) {
       padding: 4rem 2rem;
