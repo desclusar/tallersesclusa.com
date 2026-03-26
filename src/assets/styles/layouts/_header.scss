@@ -1,5 +1,8 @@
+// ============================================================================
+// _header.scss
+// ============================================================================
+
 @use "../variables" as *;
-@use "../components/button";
 @use "../mixins" as *;
 
 .header {
@@ -45,6 +48,17 @@
     display: none;
 
     &--is-open {
+
+      @include respond-to("md") {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: static;
+        width: 80%;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+      }
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -57,17 +71,6 @@
       border-radius: 0 0 0 8px;
       background-color: rgba($color-text-highlight, 0.8);
       box-shadow: -10px 10px 20px $color-text;
-
-      @media (min-width: 768px) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        position: static;
-        width: 80%;
-        border-radius: 0;
-        box-shadow: none;
-        background-color: none;
-      }
     }
   }
 

@@ -1,15 +1,16 @@
 @use "../variables" as *;
 @use "sass:color";
+@use "../mixins" as *;
 
 .card {
+  @extend %shadow-element;
   display: flex;
   flex-direction: column;
   background-color: $color-text-highlight;
   overflow: hidden;
   width: 100%;
-  box-shadow: -10px 10px 15px -3px rgba(0, 0, 0, 0.1);
   max-width: 350px;
-  border-radius: 24px;
+  border-radius: $radius-xl;
 
   &:hover {
     transform: translateY(-4px);
@@ -24,10 +25,11 @@
     gap: 1rem;
 
     &-icon {
-      color: $color-primary;
+      color: $color-secondary;
     }
+
     &-title {
-      color: color.adjust($color-text, $lightness: -30%);
+      color: $color-secondary;
     }
   }
 
@@ -56,7 +58,7 @@
       bottom: 10px;
       padding: 0 10px;
       font-size: 0.75rem;
-      background-color: rgba(250, 250, 250, 0.5);
+      background-color: rgba($color-bosch-gray, 0.8);
       border-radius: 8px;
     }
   }
@@ -76,9 +78,9 @@
     display: inline-flex;
     align-items: center;
     padding-bottom: 1rem;
-    justify-content: right;
+    justify-content: flex-end;
     gap: 8px;
-    color: $color-primary;
+    color: $color-design;
     text-decoration: none;
     font-weight: 800;
 
@@ -98,9 +100,9 @@
 
     &-item {
       display: flex;
-      align-items: flex-start;
-      padding-bottom: 1rem;
-      gap: 10px;
+      align-items: center;
+      padding-bottom: $spacing-md;
+      gap: $spacing-md;
       font-size: 0.9rem;
       line-height: 1.4;
 
@@ -109,9 +111,7 @@
         flex-shrink: 0;
         width: 15px;
         height: 15px;
-        margin-top: 2px;
 
-        //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%230056b3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M7.805 3.469C8.16 3.115 8.451 3 8.937 3h6.126c.486 0 .778.115 1.132.469l4.336 4.336c.354.354.469.646.469 1.132v6.126c0 .5-.125.788-.469 1.132l-4.336 4.336c-.354.354-.646.469-1.132.469H8.937c-.5 0-.788-.125-1.132-.469L3.47 16.195c-.355-.355-.47-.646-.47-1.132V8.937c0-.5.125-.788.469-1.132L7.805 3.47Z'/%3E%3Cpath d='m8.667 12.833l1.505 1.721a1 1 0 0 0 1.564-.073L15.333 9.5'/%3E%3C/g%3E%3C/svg%3E");
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%230056b3' d='M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4m2 1.78l.72.72L3.5 5.72L1.78 4l.72-.72l1 1z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-size: contain;

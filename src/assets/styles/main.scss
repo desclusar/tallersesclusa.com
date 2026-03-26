@@ -3,21 +3,35 @@
  * Do not include SCSS code in this file.
  */
 
+/** 
+  * Tools 
+  */
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/** 
+  * Base
+  */
+@use "./layouts/base";
+
 /**
  * Import dependencies
  */
-@use "dependencies";
+@use "./dependencies";
 
 /**
- * Import layouts
- * It's a best practice to use a different partial for each page
+ * Components
  */
-
 @use "components/button";
 @use "components/burguer";
 @use "components/card";
 @use "components/trust-image";
 @use "components/hero";
+
+/**
+ * Import layouts
+ * It's a best practice to use a different partial for each page
+ */
 
 @use "layouts/header";
 @use "layouts/footer";

@@ -1,21 +1,77 @@
-@mixin container {
-  max-width: 100%;
-  padding: 0 1rem;
+// ============================================================================
+// MIXINS
+// ============================================================================
 
-  @media (min-width: 768px) {
-    & {
-      text-align: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 1rem;
-    }
-  }
+@use "../styles/variables" as *;
+
+// --- Contenidor centrat amb una amplada màxima
+@mixin container {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
 }
 
+// Centrat dels elements que hi ha en un flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// --- Hover per a links ---
+// Efecte d'augment del pes de la font i lleuger desplaçament cap a dalt
+// L'utilitzo a .footer__link i a .links_text
 @mixin hover-link($translate: -4px) {
   transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY($translate);
+    font-weight: 900;
   }
+}
+
+// --- Pseudo-element de base ---
+// L'utilitzo per als elements que es referencies repecte altres
+@mixin pseudo-absolute {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+// --- Media queries semàntiques ---
+// En comptes d'escriure @media(min-width:768px) cada cop,
+// utilitzo nom un mixin amb variables
+@mixin respond-to($bp) {
+  @if $bp == "md" {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $bp == "lg" {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $bp == "xl" {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  }
+}
+
+// --- Overlay (màscara sobre imatge) ---
+// Utilitzat al hero o qualsevol imatge que necessiti ressaltar el text
+@mixin overlay($color: $color-mask, $opacity: 0.7) {
+  &::before {
+    @include pseudo-absolute;
+    inset: 0;
+    background: $color;
+    opacity: $opacity;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+// --- Ombra d'element
+%shadow-element {
+  box-shadow: -10px 10px 15px -3px rgba($color-mask, 0.1);
 }

@@ -1,0 +1,17 @@
+@use "sass:color";
+@use "variables" as *;
+
+/*funció que enfosqueix <0% o aclareix >0% un color
+L'utilitzo per matitzar algún color quan pagespeed em dona algún warning 
+d'accessibilitat per contrast de colors
+Si no se li passa cap paràmetre agafa el 55% per defecte*/
+
+@function text-on-dark($lightness: 55%) {
+  @return color.adjust($color-text, $lightness: $lightness);
+}
+
+//funció que encapsula clamp() per la tipografia responsive
+
+@function fluid($min, $max, $unit: vw, $factor: 5) {
+  @return clamp(#{$min}, #{$factor}#{$unit}, #{$max});
+}

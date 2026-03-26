@@ -46,7 +46,7 @@
     background-color: $color-text-highlight;
 
     &--bottom-right {
-      right: -0rem;
+      right: 0;
       bottom: -1rem;
     }
   }
@@ -58,7 +58,7 @@
   }
 
   &__label {
-    color: color.adjust($color-text, $lightness: 40%);
+    color: $color-text;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.05px;

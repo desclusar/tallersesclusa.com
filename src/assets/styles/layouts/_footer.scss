@@ -1,0 +1,202 @@
+// ============================================================================
+// _footer.scss
+// ============================================================================
+
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+  @include container;
+  width: 100%;
+  height: auto;
+  padding-top: $spacing-md;
+  background-color: $color-footer;
+  color: color.adjust($color-text, $lightness: 60%);
+  font-weight: 100;
+
+  &__container {
+    @include respond-to("md") {
+      display: grid;
+      grid-template-columns: 1fr 125px 1fr 1.2fr;
+      grid-template-areas: "brand links schedule contact";
+      align-items: start;
+      gap: 3rem;
+    }
+  }
+
+  &__bottom {
+    @include container;
+
+    @include respond-to("md") {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 1rem;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-content: space-between;
+    text-align: center;
+    border-top: 1px solid $color-text;
+  }
+
+  &__legal {
+    @include container;
+
+    @include respond-to("md") {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      align-self: flex-end;
+      justify-content: flex-end;
+      gap: $spacing-xl;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    @include respond-to("md") {
+      display: inline;
+      text-align: left;
+    }
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__link {
+    &:hover {
+      @include hover-link;
+    }
+  }
+
+  %footer-section-title {
+    color: $color-text-highlight;
+  }
+
+  .brand__title {
+    @extend %footer-section-title;
+  }
+
+  .contact__title {
+    @extend %footer-section-title;
+  }
+
+  .schedule__title {
+    @extend %footer-section-title;
+  }
+
+  .links__title {
+    @extend %footer-section-title;
+  }
+}
+
+.brand {
+
+  @include respond-to("md") {
+    grid-area: brand;
+    text-align: left;
+  }
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid $color-text;
+
+  &__img {
+    width: 64px;
+    height: auto;
+  }
+}
+
+.contact {
+
+  @include respond-to("md") {
+    padding-top: 0;
+    grid-area: contact;
+    justify-self: right;
+  }
+  padding-top: 1rem;
+  text-align: left;
+  line-height: 1.8rem;
+
+  &__address {
+    font-style: normal;
+    margin-left: $spacing-md;
+  }
+
+  %contact-item-row {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-md;
+    padding: 0;
+    margin: $spacing-sm 0;
+  }
+
+  .contact__item {
+    &--icon {
+      @extend %contact-item-row;
+      align-items: center;
+    }
+
+    &--ub {
+      @extend %contact-item-row;
+      align-items: baseline;
+    }
+
+    &--highlight {
+      font-weight: 400;
+    }
+  }
+}
+
+.schedule {
+
+  @include respond-to("md") {
+    grid-area: schedule;
+    padding-top: 0;
+    justify-self: right;
+  }
+  padding: 1rem 0;
+  text-align: left;
+  line-height: 1.8rem;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-left: $spacing-md;
+    margin-top: $spacing-sm;
+    gap: 2rem;
+  }
+
+  &__horari {
+    &--tancat {
+      text-transform: uppercase;
+      color: color.adjust($color-accent, $lightness: 25%);
+    }
+  }
+}
+
+.links {
+  @include respond-to("md") {
+    grid-area: links;
+    justify-self: left;
+  }
+
+  &__item {
+    @include hover-link;
+  }
+
+  &__list {
+    margin-left: $spacing-md;
+    margin-top: $spacing-sm;
+    font-weight: 400;
+  }
+
+  &__icon {
+    color: $color-primary;
+  }
+}

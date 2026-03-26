@@ -2,7 +2,7 @@
  * Import dependencies from node_modules
  * see commented examples below
  */
-
+import Swal from 'sweetalert2';
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
@@ -24,3 +24,17 @@ if (header && navToggle && navList) {
     navToggle.setAttribute("aria-label", isOpen ? "Tancar menú principal" : "Obrir menú principal");
   });
 }
+
+
+document.querySelectorAll(".footer__link").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    Swal.fire({
+      title: this.dataset.title || "Missatge",
+      text: this.dataset.text || "Acció no disponible.",
+      icon: this.dataset.icon || "info",
+      confirmButtonText: "OK"
+    });
+  });
+});

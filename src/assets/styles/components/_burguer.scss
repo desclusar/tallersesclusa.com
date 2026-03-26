@@ -13,7 +13,7 @@
   transition: opacity 0.3s ease;
 
   @media (min-width: 768px) {
-    display: none; // ← aquí, dins del component
+    display: none;
   }
 
   &:hover {
