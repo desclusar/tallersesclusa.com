@@ -17,14 +17,6 @@
         "except": ["first-nested"],
         "ignore": ["after-comment"]
       }
-    ],
-    "order/order": [
-      "custom-properties",
-      "dollar-variables",
-      { "type": "at-rule", "name": "extend" },
-      { "type": "at-rule", "name": "include" },
-      "declarations",
-      "rules"
     ]
   }
 }

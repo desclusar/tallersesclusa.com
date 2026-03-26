@@ -110,7 +110,7 @@
 .contact {
   padding-top: 0;
   grid-area: contact;
-  justify-self: right;
+  justify-self: flex-start;
 
   @include respond-to("md") {
     padding-top: 1rem;
@@ -182,6 +182,7 @@
   @include respond-to("md") {
     padding-top: $spacing-md;
   }
+
   &__item {
     @include hover-link;
   }
