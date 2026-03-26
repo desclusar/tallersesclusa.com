@@ -6,7 +6,7 @@
   align-content: center;
   border-radius: 8px;
   line-height: 18px;
-  width: 100%;
+  width: auto;
 
   &__media {
     display: flex;
@@ -24,7 +24,7 @@
   &__picture {
     position: relative;
     display: block;
-    border-radius: 12px;
+    border-radius: $radius-lg;
     width: 100%;
   }
 

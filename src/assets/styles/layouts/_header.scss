@@ -4,6 +4,7 @@
 
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../functions" as *;
 
 .header {
   margin: auto;
@@ -47,18 +48,14 @@
   &__nav-list {
     display: none;
 
-    &--is-open {
+    @include respond-to("md") {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
 
-      @include respond-to("md") {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        position: static;
-        width: 80%;
-        border-radius: 0;
-        box-shadow: none;
-        background-color: transparent;
-      }
+    &--is-open {
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -69,8 +66,8 @@
       top: 100%;
       padding: 1rem;
       border-radius: 0 0 0 8px;
-      background-color: rgba($color-text-highlight, 0.8);
-      box-shadow: -10px 10px 20px $color-text;
+      background-color: rgba($color-text-highlight, 0.95);
+      box-shadow: -10px 10px 30px $color-primary;
     }
   }
 
@@ -94,7 +91,7 @@
   &__cta {
     display: none;
 
-    @media (min-width: 768px) {
+    @include respond-to("md") {
       display: flex;
       flex: 0 0 auto;
       padding: 0.3rem 1rem;

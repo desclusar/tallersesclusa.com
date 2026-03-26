@@ -4,7 +4,6 @@
 @use "sass:color";
 
 .hero {
-
   @include overlay($color-mask, 0.7);
   position: relative;
   display: flex;
@@ -49,21 +48,22 @@
   }
 
   &__sub {
-    padding: 2rem;
+    padding: $spacing-xl 0;
     color: $color-text-highlight;
-    font-size: fluid(1rem, 2.25rem, vw, 2);
+    font-size: fluid(1rem, 2rem, vw, 2);
     font-weight: 100;
-    line-height: 1.4;
+    line-height: fluid(2rem, 5rem, vw, 6);
   }
 
   &__btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
 
     @include respond-to("md") {
       flex-direction: row;
+      margin-top: $spacing-md;
+      gap: $spacing-2xl;
     }
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    gap: 2rem;
   }
 }
