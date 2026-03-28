@@ -12,6 +12,7 @@
 
 .services {
   &__container {
+    @include container;
     text-align: center;
   }
 

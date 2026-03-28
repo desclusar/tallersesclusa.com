@@ -3,12 +3,16 @@
  * see commented examples below
  */
 import Swal from 'sweetalert2';
+import * as CookieConsent from 'vanilla-cookieconsent';
+import { config as cookieConfig } from './cookieconsent-config.js';
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
 /**
  * Write any other JavaScript below
  */
+
+CookieConsent.run(cookieConfig);
 
 const navToggle = document.querySelector(".burger");
 const header = document.querySelector(".header");
