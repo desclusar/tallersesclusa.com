@@ -49,3 +49,7 @@ a {
 ul {
   list-style: none;
 }
+
+.skip-link {
+  display: none; //amago el link perque només ñes per accessibilitat
+}
