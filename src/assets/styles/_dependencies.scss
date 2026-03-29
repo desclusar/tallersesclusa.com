@@ -5,4 +5,61 @@
 
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
-@import "npm:@fortawesome/fontawesome-free/css/all.css";
+// -- En comptes de carregar el fontawesome complert, només importo el
+// -- tipus d'icones que utilitzo al projecte: solid i regular.
+// -- fontawesome.css es el arxiu base i es obligatori.
+
+//@import "npm:@fortawesome/fontawesome-free/css/all.css";
+
+@import "npm:@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "npm:@fortawesome/fontawesome-free/css/solid.css";
+@import "npm:@fortawesome/fontawesome-free/css/regular.css";
+
+// auto-hosetjo la font perque google fonts em penalitza molt el rendiment a pageSpeed.
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-100.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-800.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/public-sans-v21-latin-900.woff2") format("woff2");
+}
