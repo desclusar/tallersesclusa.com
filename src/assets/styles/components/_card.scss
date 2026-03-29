@@ -1,48 +1,54 @@
-@use "../variables" as *;
+/*------------------------------------*\
+  #CARD
+\*------------------------------------*/
+
+/**
+ * La card està pensada per contenir imatge, títol i contingut.
+ * Funciona amb layout flex vertical i horitzontal.
+ */
+
 @use "sass:color";
+@use "../variables" as *;
 @use "../mixins" as *;
 
 .card {
   @extend %shadow-element;
   display: flex;
   flex-direction: column;
-  background-color: $color-text-highlight;
-  overflow: hidden;
+  overflow: hidden; // evita que la imatge sobresurti del border-radius
   width: 100%;
   max-width: 350px;
+  background-color: $color-text-highlight;
   border-radius: $radius-lg;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
-    transition: all 0.3s ease;
   }
 
   &__header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1rem 0;
     gap: 1rem;
+    padding: 1rem 0;
 
-    &-icon {
-      color: $color-secondary;
-    }
-
+    &-icon,
     &-title {
       color: $color-secondary;
     }
   }
 
+  // Wrapper posicional per al badge de copyright de la imatge
   &__image-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
   }
 
   &__picture {
     display: block;
-    height: 200px;
     width: 100%;
+    height: 200px;
     overflow: hidden;
   }
 
@@ -57,16 +63,15 @@
       right: 10px;
       bottom: 10px;
       padding: 0 10px;
-      font-size: 0.75rem;
+      font-size: $font-size-sm;
       background-color: rgba($color-bosch-gray, 0.8);
-      border-radius: 8px;
+      border-radius: $radius-sm;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     padding: 0 1rem;
   }
 
@@ -77,15 +82,15 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    padding-bottom: 1rem;
     justify-content: flex-end;
-    gap: 8px;
+    gap: $spacing-sm;
+    padding-bottom: $spacing-md;
     color: $color-design;
-    text-decoration: none;
     font-weight: 800;
+    text-decoration: none;
 
-    @media (min-width: 768px) {
-      justify-content: left;
+    @include respond-to("md") {
+      justify-content: flex-start;
     }
 
     &-icon {
@@ -101,9 +106,9 @@
     &-item {
       display: flex;
       align-items: center;
-      padding-bottom: $spacing-md;
       gap: $spacing-md;
-      font-size: 0.9rem;
+      padding-bottom: $spacing-md;
+      font-size: $font-size-sm;
       line-height: 1.4;
 
       &::before {
@@ -111,7 +116,6 @@
         flex-shrink: 0;
         width: 15px;
         height: 15px;
-
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%230056b3' d='M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4m2 1.78l.72.72L3.5 5.72L1.78 4l.72-.72l1 1z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-size: contain;
@@ -120,6 +124,7 @@
     }
   }
 
+  // quan la card té hover, l'icona del link es desplaça
   &:hover &__link-icon {
     transform: translateX(5px);
   }

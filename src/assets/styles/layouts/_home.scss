@@ -1,14 +1,14 @@
-// ============================================================================
-// _home.scss ➡️ Layout de la pàgina principal
-// ============================================================================
+/*------------------------------------*\
+  #HOME
+\*------------------------------------*/
 
+@use "sass:color";
 @use "../variables" as *;
 @use "../mixins" as *;
-@use "sass:color";
 
-/*-----------------------------------------------------------------------------*/
-// #SERVICES
-/*-----------------------------------------------------------------------------*/
+/*------------------------------------*\
+  #SERVICES
+\*------------------------------------*/
 
 .services {
   &__container {
@@ -16,6 +16,7 @@
     text-align: center;
   }
 
+  // Columna en mòbil, fila amb wrap en escriptori
   &__carrussel {
     display: flex;
     flex-direction: column;
@@ -53,32 +54,34 @@
   }
 
   &__description {
-    text-align: center;
     margin: $spacing-md 0;
     padding: $spacing-md;
+    text-align: center;
   }
 }
 
-/*-----------------------------------------------------------------------------*/
-// #WHY-US
-/*-----------------------------------------------------------------------------*/
+/*------------------------------------*\
+  #WHY-US
+\*------------------------------------*/
 
 .why-us {
-  background-color: $color-secondary;
   padding: $spacing-md;
+  background-color: $color-secondary;
   color: $color-text-highlight;
 
+  // El mixin container s'aplica només a "md" perquè en mòbil
+  // el contenidor ocupa el 100% sense restricció d'amplada màxima
   &__container {
     display: flex;
     flex-direction: column;
-    margin: $spacing-xl 0;
     width: 100%;
+    margin: $spacing-xl 0;
 
     @include respond-to("md") {
       @include container;
       flex-direction: row;
-      text-align: left;
       gap: $spacing-md;
+      text-align: left;
     }
   }
 
@@ -101,8 +104,8 @@
 
   &__item-icon {
     @include flex-center;
-    background-color: color.adjust($color-primary, $lightness: 8%);
     padding: $spacing-sm;
+    background-color: color.adjust($color-primary, $lightness: 8%);
     border-radius: $radius-md;
   }
 
@@ -116,31 +119,29 @@
   }
 }
 
-/*-----------------------------------------------------------------------------*/
-//#CTA
-/*-----------------------------------------------------------------------------*/
+/*------------------------------------*\
+  #CTA
+\*------------------------------------*/
 
 .cta {
   display: flex;
   flex-direction: column;
-  margin: $spacing-md 0;
   align-items: center;
   justify-content: center;
+  margin: $spacing-md 0;
   padding: $spacing-md;
 
   &__container {
     @extend %shadow-element;
     @include container;
-    text-align: center;
     padding: $spacing-2xl $spacing-xl;
-    border-radius: $radius-lg;
+    text-align: center;
     background-color: $color-text-highlight;
+    border-radius: $radius-lg;
 
     @include respond-to("md") {
-      flex-direction: column;
-      margin: $spacing-xl 0;
-      align-items: center;
       width: auto;
+      margin: $spacing-xl 0;
     }
   }
 
@@ -150,10 +151,6 @@
 
   &__description {
     padding: $spacing-xl 0;
-
-    @include respond-to("md") {
-      padding: $spacing-xl 0;
-    }
   }
 
   &__btn-container {
@@ -165,10 +162,9 @@
     @include respond-to("md") {
       display: flex;
       flex-direction: row;
-      width: auto;
-      justify-content: center;
       align-items: center;
-      gap: $spacing-2xl;
+      justify-content: center;
+      width: auto;
     }
   }
 }

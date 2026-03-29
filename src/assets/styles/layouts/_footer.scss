@@ -1,21 +1,36 @@
-// ============================================================================
-// _footer.scss
-// ============================================================================
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
 
 @use "sass:color";
 @use "../variables" as *;
 @use "../mixins" as *;
 
+// Placeholder compartit per tots els títols de secció del footer.
+// Aplico  via @extend per evitar repetició de regles CSS al output compilat.
+%footer-section-title {
+  color: $color-text-highlight;
+}
+
+.brand__title,
+.contact__title,
+.schedule__title,
+.links__title {
+  @extend %footer-section-title;
+}
+
 .footer {
   width: 100%;
-  height: auto;
   padding-top: $spacing-md;
   background-color: $color-footer;
   color: color.adjust($color-text, $lightness: 60%);
   font-weight: 100;
 
+  // Grid de quatre columnes a partir de breakpoint.
+  // A al brakpoint md canvio l'ordre visual
   &__container {
     @include container;
+
     @include respond-to("md") {
       display: grid;
       grid-template-columns: 1fr 125px 1fr 1.2fr;
@@ -25,6 +40,7 @@
     }
   }
 
+  // Franja inferior: copyright + legal, column en mòbil i row a partir d'md
   &__bottom {
     @include container;
     display: flex;
@@ -39,27 +55,29 @@
     }
   }
 
+  // El text de copyright s'alinea a l'esquerra a md" i ocupa tot l'ample disponible
   &__copyright {
     @include container;
-    display: inline;
     text-align: center;
 
     @include respond-to("md") {
-      display: inline;
       text-align: left;
       width: 100%;
     }
   }
 
+  // Llista d'enllaços legals: separats a mòbil, agrupats a la dreta a md
   &__legal {
     @include container;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
+    small {
+      display: contents; // Amago small del layout perque no interfereixi amb la relació pare-filla
+    }
+
     @include respond-to("md") {
-      display: flex;
-      flex-direction: row;
       justify-content: flex-end;
       gap: $spacing-xl;
     }
@@ -70,26 +88,6 @@
       @include hover-link;
     }
   }
-}
-
-%footer-section-title {
-  color: $color-text-highlight;
-}
-
-.brand__title {
-  @extend %footer-section-title;
-}
-
-.contact__title {
-  @extend %footer-section-title;
-}
-
-.schedule__title {
-  @extend %footer-section-title;
-}
-
-.links__title {
-  @extend %footer-section-title;
 }
 
 .brand {
@@ -108,9 +106,9 @@
 }
 
 .contact {
-  padding-top: 0;
   grid-area: contact;
-  justify-self: flex-start;
+  justify-self: start;
+  padding-top: 0;
 
   @include respond-to("md") {
     padding-top: 1rem;
@@ -123,6 +121,7 @@
     margin-left: $spacing-md;
   }
 
+  // Placeholder intern: layout de fila compartit pels ítems de contacte
   %contact-item-row {
     display: flex;
     flex-direction: row;
@@ -149,14 +148,15 @@
 }
 
 .schedule {
-  @include respond-to("md") {
-    grid-area: schedule;
-    padding-top: 0;
-    justify-self: right;
-  }
+  grid-area: schedule;
   padding: 1rem 0;
   text-align: left;
   line-height: 1.8rem;
+
+  @include respond-to("md") {
+    padding-top: 0;
+    justify-self: right;
+  }
 
   &__item {
     display: flex;
@@ -167,6 +167,7 @@
   }
 
   &__horari {
+    // Estat "tancat": en majúscules i amb color accentuat suavitzat
     &--tancat {
       text-transform: uppercase;
       color: color.adjust($color-accent, $lightness: 25%);

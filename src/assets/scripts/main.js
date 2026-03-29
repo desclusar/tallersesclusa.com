@@ -1,19 +1,14 @@
-/**
- * Import dependencies from node_modules
- * see commented examples below
- */
 import Swal from 'sweetalert2';
 import * as CookieConsent from 'vanilla-cookieconsent';
 import { config as cookieConfig } from './cookieconsent-config.js';
-// import 'some-node-module';
-// import SomeModule from 'some-node-module';
 
-/**
- * Write any other JavaScript below
- */
 
+// Inicialitza el banner de cookies amb la configuració definida
 CookieConsent.run(cookieConfig);
 
+
+
+// Toggle del menú burger
 const navToggle = document.querySelector(".burger");
 const header = document.querySelector(".header");
 const navList = document.querySelector(".header__nav-list");
@@ -30,6 +25,9 @@ if (header && navToggle && navList) {
 }
 
 
+
+// SweetAlert2
+// Mostra un SweetAlert personalitzat a partir dels atributs data-* dels enllaços del footer
 document.querySelectorAll(".footer__link").forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();

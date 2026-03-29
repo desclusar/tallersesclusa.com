@@ -1,10 +1,10 @@
-// ============================================================================
-// MIXINS
-// ============================================================================
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
 
 @use "../styles/variables" as *;
 
-// --- Contenidor centrat amb una amplada màxima
+// Contenidor centrat amb una amplada màxima
 @mixin container {
   max-width: $max-width;
   width: 100%;
@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-// --- Hover per a links ---
+// -- Hover per a links --
 // Efecte d'augment del pes de la font i lleuger desplaçament cap a dalt
 // L'utilitzo a .footer__link i a .links_text
 @mixin hover-link($translate: -4px) {

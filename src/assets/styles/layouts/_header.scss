@@ -1,19 +1,19 @@
-// ============================================================================
-// _header.scss
-// ============================================================================
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
 
 @use "../variables" as *;
 @use "../mixins" as *;
 @use "../functions" as *;
 
 .header {
-  margin: auto;
+  position: sticky;
+  top: 0;
+  z-index: 5;
   width: 100%;
   background-color: $color-text-highlight;
-  position: sticky;
-  z-index: 5;
-  top: 0;
 
+  // Barra horitzontal: logo | nav | cta
   &__container {
     @include container;
     display: flex;
@@ -21,30 +21,30 @@
     position: relative;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
     min-height: 8vh;
     padding: 0 $spacing-md;
     gap: $spacing-md;
   }
 
+  // El logo no creix ni s'encongeix; sempre ocupa el seu tamany natural
   &__logo {
     flex: 0 0 auto;
   }
 
   &__img {
     display: block;
-    height: 48px;
     width: auto;
+    height: 48px;
   }
 
+  // El nav ocupa l'espai restant entre logo i cta
   &__nav {
     display: flex;
-    flex-direction: column;
     flex: 1;
-    width: 100%;
     align-items: center;
   }
 
+  // Mòbil: ocult per defecte; escriptori: fila horitzontal
   &__nav-list {
     display: none;
 
@@ -55,18 +55,19 @@
       justify-content: space-evenly;
     }
 
+    // Menú desplegable actiu en mòbil (activat per JS)
     &--is-open {
       display: flex;
       flex-direction: column;
       gap: 2rem;
       position: absolute;
-      text-align: left;
-      width: 150px;
-      right: 0;
       top: 100%;
+      right: 0;
+      width: 150px;
       padding: 1rem;
-      border-radius: 0 0 0 8px;
+      text-align: left;
       background-color: rgba($color-text-highlight, 0.95);
+      border-radius: 0 0 0 8px;
       box-shadow: -10px 10px 30px $color-primary;
     }
   }
@@ -81,6 +82,7 @@
       color: $color-primary;
     }
 
+    // Estat actiu: negreta + glow per reforçar la pàgina actual
     &--is-active {
       color: $color-primary;
       font-weight: 600;

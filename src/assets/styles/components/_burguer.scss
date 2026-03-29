@@ -1,3 +1,12 @@
+/*------------------------------------*\
+  #BURGER
+\*------------------------------------*/
+
+/**
+ * Control del menú mòbil (toggle via JS a main.js).
+ * En escriptori (md+) s'amaga; el nav es mostra directament.
+ */
+
 @use "../variables" as *;
 @use "../mixins" as *;
 
@@ -5,14 +14,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: $spacing-xs;
+  color: $color-primary;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 5px;
-
-  color: $color-primary;
   transition: opacity 0.3s ease;
 
+  // Oculto el botó a partir de "md" perquè el nav ja és visible
   @include respond-to("md") {
     display: none;
   }
@@ -22,18 +31,18 @@
   }
 
   &__icon {
+    display: block;
     width: 32px;
     height: 32px;
-    display: block;
   }
 
   &__line {
     fill: currentColor;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
     transition:
       transform 0.3s ease,
       opacity 0.2s ease;
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
   }
 
   &--is-active {

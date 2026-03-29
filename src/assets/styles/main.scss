@@ -1,43 +1,77 @@
 /**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Variables...............Variables globals.
+ *
+ * TOOLS
+ * Mixins.................Mixins.
+ * Functions..............Funcions SCSS.
+ *
+ * DEPENDENCIES
+ * Dependencies...........Llibreries externes 
+ *
+ * BASE
+ * Base...................Estils globals.
+ *
+ * LAYOUT
+ * Header.................Capçalera.
+ * Footer.................Peu de pàgina.
+ * Home...................Layout pàgina home.
+ *
+ * COMPONENTS
+ * Burger.................Menú mòbil.
+ * Button.................Botons.
+ * Card...................Cards.
+ * Hero...................Hero.
+ * Trust-image............Imatges confiança.
+ */
+
+/**
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
 
-/** 
-  * Tools 
-  */
-@use "./variables" as *;
-@use "./mixins" as *;
+/*------------------------------------*\
+  #TOOLS
+\*------------------------------------*/
 
-/** 
-  * Base
-  */
+@use "./variables";
+
+/*------------------------------------*\
+  #TOOLS
+\*------------------------------------*/
+
+@use "./mixins";
+@use "./functions";
+
+/*------------------------------------*\
+  #BASE
+\*------------------------------------*/
+
 @use "./layouts/base";
 
-/**
- * Import dependencies
- */
+/*------------------------------------*\
+  #DEPENDENCIES
+\*------------------------------------*/
+
 @use "./dependencies";
 @use "./vendors/cookieconsent.css";
 
-/**
- * Components
- */
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
 @use "components/button";
 @use "components/burguer";
 @use "components/card";
 @use "components/trust-image";
 @use "components/hero";
 
-/**
- * Import layouts
- * It's a best practice to use a different partial for each page
- */
+/*------------------------------------*\
+  #LAYOUTS 
+\*------------------------------------*/
 
 @use "layouts/header";
 @use "layouts/footer";
 @use "layouts/home";
-
-/**
- * Do NOT include anything else in this file!
- */
