@@ -154,7 +154,6 @@
   line-height: 1.8rem;
 
   @include respond-to("md") {
-    padding-top: 0;
     justify-self: right;
   }
 
